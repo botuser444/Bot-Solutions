@@ -1,0 +1,325 @@
+/*
+  Enhanced CSS for Bot Solutions
+  - Theme variables (light/dark)
+  - Hero gradient animation
+  - Smooth card hover effects
+  - Responsive layout and mobile menu
+  - Simple reveal animations for scroll
+*/
+
+:root {
+  --bg: #0b1020; /* dark background */
+  --card: #0f1724;
+  --muted: #9aa8bf;
+  --text: #e6eef8;
+  --glass: rgba(255,255,255,0.04);
+  --accent-1: #7c3aed; /* purple */
+  --accent-2: #06b6d4; /* teal */
+  --primary: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  --radius: 12px;
+}
+
+:root[data-theme='light'] {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #596174;
+  --text: #0f1724;
+  --glass: rgba(15,23,36,0.03);
+  --accent-1: #0066ff;
+  --accent-2: #ff4d8f;
+  --primary: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+}
+
+* {box-sizing: border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Helvetica Neue';
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(124,58,237,0.06), transparent), var(--bg);
+  color:var(--text);
+  transition: background 360ms ease, color 360ms ease;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:1300px;margin:0 auto;padding:1.25rem}
+
+/* Header */
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(0,0,0,0.16), transparent);backdrop-filter:blur(6px);z-index:60}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:0.6px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo img.site-logo, .footer-logo img.site-logo { display:inline-block; height:44px; width:auto; vertical-align:middle }
+.footer-logo-img { height:44px; }
+
+/* Keep header/footer containers unchanged while visually enlarging logo.
+   On very small screens use a slightly smaller logo to avoid layout issues. */
+@media (max-width: 600px) {
+  .logo img.site-logo, .footer-logo img.site-logo { height:36px }
+  .footer-logo-img { height:36px }
+}
+.main-nav{display:flex;gap:1rem;align-items:center}
+.main-nav a{color:var(--text);text-decoration:none;font-weight:600;padding:0.35rem 0.5rem;border-radius:8px;transition:background 220ms ease}
+.main-nav a:hover{background:var(--glass)}
+.header-actions{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle,.menu-toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.5rem;border-radius:10px;color:var(--text);cursor:pointer}
+.menu-toggle{display:none}
+
+/* Hero */
+.hero{padding:7.5rem 0 3.2rem;position:relative;overflow:hidden;min-height:82vh;display:flex;align-items:center}
+.hero-bg{position:absolute;left:-10%;top:-20%;width:150%;height:150%;background:linear-gradient(120deg,var(--accent-1),var(--accent-2));filter:blur(200px);opacity:0.16;transform:translateY(0) scale(1.06);transition:transform 380ms ease,opacity 380ms ease}
+.hero-inner{padding:2.5rem 0;position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem}
+.hero-title{font-size:5.6rem;margin:0 0 0.25rem;line-height:1.02;font-weight:900;letter-spacing:-0.025em;text-shadow:0 6px 30px rgba(2,6,23,0.6)}
+.hero-typed{color:var(--muted);font-size:1.6rem;max-width:1040px;margin-bottom:1.25rem}
+.cta{padding:1.1rem 1.8rem;font-size:1.12rem;border-radius:16px}
+.btn{display:inline-block;padding:0.65rem 1rem;border-radius:10px;border:none;cursor:pointer;text-decoration:none;font-weight:700}
+.btn.primary{background:var(--primary);color:white;box-shadow:0 6px 18px rgba(0,0,0,0.25);transition:transform 200ms ease}
+.btn.primary:hover{transform:translateY(-3px)}
+
+/* Sections */
+.about,.services,.testimonials,.contact{padding:3rem 0}
+.section-title{display:flex;align-items:center;gap:1rem}
+.section-title h2{margin:0}
+
+.ceo-card{display:flex;gap:1rem;align-items:center;margin-top:1rem;background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.ceo-photo{width:110px;height:110px;border-radius:12px;object-fit:cover;background:linear-gradient(90deg,#2b2f6b,#3e8ef7)}
+.ceo-info h3{margin:0}
+.ceo-info .title{color:var(--muted);margin:0.2rem 0}
+.team-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.profile {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, margin 220ms ease;
+}
+
+.profile:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+
+.profile-photo { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+.profile-left, .profile-right { margin-top: 70px; }
+
+.profile-center { width: 320px; padding: 22px; margin-top: -18px; box-shadow: 0 14px 36px rgba(0,0,0,0.08); }
+.profile-center .profile-photo { width: 140px; height: 140px; margin-bottom: 14px; }
+
+.profile h3, .profile h4 { margin: 6px 0 4px 0; }
+.profile .title { color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+.profile .bio { margin: 0 0 12px 0; color: var(--muted); line-height: 1.45; }
+
+.social-icons { display: flex; gap: 10px; }
+.social { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: rgba(0,0,0,0.04); color: var(--muted); transition: background 0.18s ease, color 0.18s ease; }
+.social:hover { background: var(--accent); color: #fff; }
+
+@media (max-width: 900px) {
+  .team-row { flex-wrap: wrap; gap: 18px; }
+  .profile, .profile-center { width: 48%; }
+  .profile-center { order: 0; margin-top: 0; }
+  .profile-left, .profile-right { margin-top: 18px; }
+}
+
+@media (max-width: 600px) {
+  .team-row { flex-direction: column; align-items: center; }
+  .profile, .profile-center { width: 100%; }
+  /* Make the CEO (center) card appear first on mobile by lowering its order */
+  .profile-center { transform: none; margin-top: 0; order: -1; }
+  .profile-left, .profile-right { margin-top: 0; }
+}
+
+/* Service cards */
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;row-gap:2rem;margin-top:1.25rem}
+.card{background:var(--card);padding:2rem;border-radius:16px;transition:transform 320ms cubic-bezier(.2,.9,.3,1),box-shadow 320ms,filter 320ms;box-shadow:0 8px 26px rgba(2,6,23,0.55)}
+.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 20px 56px rgba(2,6,23,0.6);filter:brightness(1.02)}
+.card .icon{font-size:2rem;margin-bottom:0.8rem}
+
+/* Testimonials carousel */
+.test-grid{position:relative;margin-top:1rem}
+.test-list{display:block;margin-top:0.5rem}
+.test{background:transparent;padding:0.75rem 0;display:flex;gap:0.75rem;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,0.04)}
+.test:last-child{border-bottom:none}
+/* hide avatars when user requested no pictures */
+.test img{display:none}
+.test .comment-body{margin-left:0}
+.comment-body{flex:1;display:flex;flex-direction:column}
+.meta{display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap}
+.client-name{font-weight:700;color:var(--text);font-size:0.98rem}
+.time{color:var(--muted);font-size:0.9rem}
+.rating{color:goldenrod;font-weight:700;margin-left:auto}
+.comment-text{margin-top:6px;color:var(--text);line-height:1.4}
+
+/* avatar (initials) */
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:white;display:inline-flex;align-items:center;justify-content:center;font-weight:800;flex:0 0 40px}
+.test .avatar{margin-right:12px}
+
+/* reviews header */
+.reviews-header{display:flex;align-items:center;justify-content:flex-start;margin-top:0.6rem;margin-bottom:0.6rem}
+.avg-rating{display:flex;align-items:center;gap:12px}
+.avg-rating .big{font-size:1.6rem;font-weight:900;color:var(--text)}
+.avg-rating .stars{color:goldenrod}
+.avg-rating .count{color:var(--muted);font-size:0.95rem}
+
+/* Collapse is now JS-driven to avoid conflicts with dynamically inserted items.
+  We rely on `static/js/script.js` to set inline `display` styles for each
+  review item when `.collapsed` is toggled. The old CSS nth-child rule is
+  removed to prevent inconsistencies across browsers and DOM updates. */
+
+/* toggle button */
+.reviews-toggle-wrap{margin-top:0.6rem}
+.toggle-reviews{background:transparent;border:none;color:var(--accent-2);font-weight:700;cursor:pointer;padding:0.35rem 0;display:inline-flex;gap:8px;align-items:center}
+.toggle-reviews:after{content:'→';display:inline-block;margin-left:6px}
+.toggle-reviews[aria-expanded='true']{color:var(--accent-1)}
+.toggle-reviews[aria-expanded='true']:after{content:'←'}
+.carousel-controls{display:flex;gap:0.5rem;margin-top:0.75rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#999;opacity:0.6}
+.dot.active{background:var(--accent-2);opacity:1}
+
+/* Social icon buttons used in testimonials */
+.social-icons{display:flex;gap:0.6rem;align-items:center;margin-bottom:0.6rem}
+.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none;transition:transform 180ms,background 180ms;color:var(--muted)}
+.social-icons a:hover{transform:translateY(-4px);background:rgba(255,255,255,0.03);color:var(--text)}
+.social-icons svg{display:block}
+
+/* Contact info social links (icon buttons) */
+.contact-info .social-links{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.6rem}
+.contact-info .social-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none;transition:transform 160ms,background 160ms;color:var(--muted)}
+.contact-info .social-links a:hover{transform:translateY(-4px);background:rgba(255,255,255,0.03);color:var(--text)}
+.contact-info .social-links svg{width:20px;height:20px}
+
+/* Base social button styles (used in both testimonial and contact areas) */
+.social{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none;transition:transform 180ms ease,background 180ms ease,color 180ms ease,box-shadow 180ms}
+.social svg{width:20px;height:20px}
+.social:focus{outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
+
+/* Brand colors on hover/active */
+.social.facebook:hover, .social.facebook:focus{background:#1877F2;color:white;box-shadow:0 8px 20px rgba(24,119,242,0.18);border-color:transparent}
+.social.twitter:hover, .social.twitter:focus{background:#1DA1F2;color:white;box-shadow:0 8px 20px rgba(29,161,242,0.18);border-color:transparent}
+.social.linkedin:hover, .social.linkedin:focus{background:#0A66C2;color:white;box-shadow:0 8px 20px rgba(10,102,194,0.18);border-color:transparent}
+.social.instagram:hover, .social.instagram:focus{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;box-shadow:0 8px 20px rgba(204,35,102,0.16);border-color:transparent}
+.social.github:hover, .social.github:focus{background:#181717;color:white;box-shadow:0 8px 20px rgba(0,0,0,0.28);border-color:transparent}
+.social.youtube:hover, .social.youtube:focus{background:#FF0000;color:white;box-shadow:0 8px 20px rgba(255,0,0,0.12);border-color:transparent}
+
+/* Slight lift on hover */
+.social:hover{transform:translateY(-4px)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 380px;gap:1.25rem;align-items:start}
+.contact-form{background:var(--card);padding:1.3rem;border-radius:14px}
+.contact-form input,.contact-form textarea{width:100%;Padding:0.65rem;margin-bottom:0.6rem;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);outline:none}
+.contact-form input:focus,.contact-form textarea:focus{box-shadow:0 6px 20px rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.4)}
+.contact-info{background:var(--card);padding:1rem;border-radius:12px}
+.messages{list-style:none;padding:0;margin:0 0 1rem}
+.messages .message{padding:0.6rem;border-radius:8px}
+.messages .success{background:#0f5132;color:#d1fae5}
+
+.site-footer{padding:1.2rem 0;border-top:1px solid rgba(255,255,255,0.04);margin-top:2rem}
+.site-footer{padding:2.25rem 0 1.25rem;border-top:1px solid rgba(255,255,255,0.04);margin-top:2rem;background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent)}
+
+/* Footer layout */
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 320px;gap:1.25rem;align-items:start}
+.footer-col h4{margin:0 0 0.6rem 0}
+.footer-logo{font-weight:900;font-size:1.2rem;letter-spacing:0.4px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:0.5rem}
+.footer-desc{color:var(--muted);margin:0 0 0.5rem}
+.footer-note{color:var(--muted);font-size:0.85rem}
+
+.footer-site-link{display:inline-block;color:var(--accent-2);font-weight:700;text-decoration:none}
+.footer-site-link:hover{text-decoration:underline}
+
+.footer-nav ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem}
+.footer-nav a{color:var(--text);text-decoration:none;opacity:0.95}
+.footer-nav a:hover{text-decoration:underline;color:var(--accent-2)}
+
+.footer-contact p{margin:0.3rem 0;color:var(--muted)}
+.footer-socials .social{width:40px;height:40px;border-radius:8px}
+
+/* Highlight email links in contact areas to match theme */
+.contact-info a[href^="mailto:"], .footer-contact a[href^="mailto:"] {
+  display: inline-block;
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 26px rgba(2,6,23,0.45);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+.contact-info a[href^="mailto:"]:hover, .footer-contact a[href^="mailto:"]:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.55);
+  opacity: 0.98;
+}
+
+/* For very small screens ensure the email button wraps nicely */
+@media (max-width:600px){
+  .contact-info a[href^="mailto:"], .footer-contact a[href^="mailto:"]{padding:0.35rem 0.6rem}
+}
+
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:0.95rem;border-top:1px solid rgba(255,255,255,0.03);gap:1rem}
+.footer-bottom p{margin:0;color:var(--muted);font-size:0.95rem}
+.back-to-top{color:var(--accent-2);text-decoration:none;font-weight:700}
+.back-to-top:hover{text-decoration:underline}
+
+@media (max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .footer-grid{grid-template-columns:1fr;gap:0.8rem}
+  .footer-bottom{flex-direction:column;align-items:center;gap:0.6rem}
+}
+
+/* Responsive: show hamburger on small screens */
+@media (max-width:900px){
+  .main-nav{display:none;position:absolute;left:0;right:0;top:64px;background:var(--bg);padding:1rem;border-top:1px solid rgba(255,255,255,0.03);flex-direction:column}
+  .menu-toggle{display:inline-block}
+  .contact-grid{grid-template-columns:1fr}
+  .hero-title{font-size:1.6rem}
+  .hero{min-height:42vh;padding:2rem 0}
+  .hero-bg{display:none}
+}
+
+/* Services responsive tweaks: 4 columns desktop, 2 columns tablet, 1 column mobile */
+@media (max-width: 1100px) {
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Review form styles */
+.review-form{background:var(--card);padding:1.25rem;border-radius:12px;margin-top:1.5rem;max-width:900px}
+.review-form h3{margin:0 0 0.5rem}
+.review-form .form-row{display:flex;flex-direction:column;margin-bottom:0.75rem}
+.review-form input,.review-form textarea{padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.review-form .hint{color:var(--muted);font-size:0.9rem;margin-top:0.5rem}
+
+/* Star rating */
+.star-rating{display:inline-flex;gap:6px;flex-direction:row-reverse}
+.star-rating input{display:none}
+.star-rating label{cursor:pointer;font-size:1.4rem;color:rgba(255,255,255,0.15);transition:color 140ms}
+.star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label{color:goldenrod}
+
+@media (max-width: 600px) {
+  .service-grid { grid-template-columns: 1fr; }
+}
+
+/* Push hero title slightly down on narrow (mobile) screens for better spacing */
+@media (max-width: 600px) {
+  .hero-title { margin-top: 1.1rem; }
+  .hero-inner { padding-top: 2.5rem; }
+}
+
+/* Animation helpers: we add classes from JS to stagger appearance */
+.animate-hidden{opacity:0;transform:translateY(12px) scale(0.995)}
+.animate-show{opacity:1;transform:none;transition:opacity 540ms ease,transform 540ms cubic-bezier(.2,.9,.3,1)}
+
+/* reveal animation */
+.reveal{opacity:1;transform:none;transition:opacity 480ms ease,transform 480ms ease}
+/* Ensure content is visible by default so the page still renders if JS fails */
+.container > *{opacity:1;transform:none}

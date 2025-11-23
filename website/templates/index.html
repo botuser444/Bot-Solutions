@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bot Solutions — AI & Software Agency</title>
+  <link rel="canonical" href="https://botsolutions.site/" />
+  <meta property="og:url" content="https://botsolutions.site/" />
+  <!-- Favicon and touch icon (uses uploaded logo.png) -->
+  <link rel="icon" href="/static/images/logo.png" type="image/png" sizes="any" />
+  <link rel="apple-touch-icon" href="/static/images/logo.png" />
+  <link rel="manifest" href="/static/manifest.json">
+  <meta name="theme-color" content="#7c3aed" />
+  <link rel="stylesheet" href="/static/css/style.css?v=3" />
+  <script defer src="/static/js/script.js?v=3"></script>
+</head>
+<body>
+  <!-- Header with navigation and theme toggle -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="https://botsolutions.site" class="logo" aria-label="Bot Solutions home">
+        <img src="/static/images/logo.png" alt="Bot Solutions logo" class="site-logo" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">≡</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <!-- a dedicated background element we can animate with JS -->
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <h1 class="hero-title">Welcome to Bot Solutions</h1>
+        <!-- typed line will cycle through short taglines -->
+        <p id="heroTyped" class="hero-typed">We build modern web, mobile and AI-powered solutions.</p>
+        <a href="#contact" class="btn primary cta">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>Bot Solutions is a modern software agency dedicated to transforming businesses through innovative technology. We specialize in web development, mobile applications, AI solutions, and cloud services, delivering tailored solutions that drive real results. Our passionate team of developers and designers works closely with clients to turn their vision into reality, combining cutting-edge technology with creative problem-solving. Whether you're a startup or an established enterprise, we're committed to building scalable, user-friendly software that helps your business thrive in the digital age.
+</p>
+      
+        <div class="team-row">
+          <div class="profile profile-left">
+            <!-- Dummy male avatar (inline SVG) -->
+            <svg class="profile-photo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Male avatar">
+              <rect width="64" height="64" rx="12" fill="var(--card)" />
+              <g transform="translate(0,4)" fill="currentColor">
+                <circle cx="32" cy="18" r="10" fill="var(--muted)" />
+                <path d="M12 54c0-10 10-18 20-18s20 8 20 18" fill="var(--muted)" opacity="0.95" />
+              </g>
+            </svg>
+            <h4>Usman Ahmed</h4>
+            <p class="title">Full Stack Developer</p>
+            <p class="bio">Leads engineering and architecture. Usman focuses on scalable systems and developer workflows.</p>
+            <!-- Team member social icons removed; only CEO shows socials -->
+          </div>
+
+          <div class="profile profile-center">
+            <img src="/static/images/ceo-placeholder.png" alt="CEO photo" class="profile-photo ceo" />
+            <h3>Hamid Aslam</h3>
+            <p class="title">CEO & Founder</p>
+            <p class="bio">Hamid leads the company with a background in AI and Web engineering. He drives product strategy and ensures delivery excellence.</p>
+            <div class="social-icons">
+              <a class="social linkedin" href="https://www.linkedin.com/in/hamid-aslam" target="_blank" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.34 17.5H6.14V10.5h2.2v7zM7.24 9.45a1.28 1.28 0 110-2.56 1.28 1.28 0 010 2.56zM18 17.5h-2.2v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9v3.67H10V10.5h2.1v.96h.03c.29-.54 1.01-1.1 2.08-1.1 2.22 0 2.63 1.46 2.63 3.36v4.78z"/></svg>
+              </a>
+              <a class="social github" href="https://github.com/botuser444" target="_blank" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.97.1-.75.4-1.26.72-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.06 11.06 0 012.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.82 1.19 3.08 0 4.43-2.71 5.4-5.29 5.68.41.35.78 1.04.78 2.1 0 1.51-.01 2.73-.01 3.1 0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="profile profile-right">
+            <!-- Improved female avatar (inline SVG) -->
+            <svg class="profile-photo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Female avatar">
+              <rect width="64" height="64" rx="12" fill="var(--card)" />
+              <g transform="translate(0,4)" fill="currentColor">
+                <!-- head -->
+                <circle cx="32" cy="18" r="9" fill="var(--muted)" />
+                <!-- shoulders/body -->
+                <path d="M14 46c0-7 10-14 18-14s18 7 18 14v6H14v-6z" fill="var(--muted)" opacity="0.95" />
+                <!-- hair silhouette -->
+                <path d="M20 18c3-5 8-8 12-8s9 2 12 8c-3-3-9-5-12-5s-9 2-12 5z" fill="var(--muted)" opacity="0.9" />
+              </g>
+            </svg>
+            <h4>Irsa khan</h4>
+            <p class="title">App Developer</p>
+            <p class="bio">Irsa focuses on the development of mobile applications with a keen eye on user experience and performance.</p>
+            <!-- Team member social icons removed; only CEO shows socials -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="service-grid">
+          <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>Modern websites and web apps using Django, React, or plain HTML/CSS/JS.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📱</div>
+            <h3>Mobile Apps</h3>
+            <p>Cross-platform mobile apps with great performance and UX.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🤖</div>
+            <h3>AI Solutions</h3>
+            <p>Custom AI/ML models and integrations to power smarter products.</p>
+          </div>
+          <div class="card">
+            <div class="icon">☁️</div>
+            <h3>Cloud Services</h3>
+            <p>Cloud architecture, deployments, and managed services for scale.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>DevOps & CI/CD</h3>
+            <p>Automated build, test and deployment pipelines to keep releases safe and frequent.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>User-centered design, interactive prototypes, and polished visual systems for delightful products.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🗄️</div>
+            <h3>Data Engineering</h3>
+            <p>ETL, data pipelines, warehousing and analytics to power data-driven decisions.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🤖</div>
+            <h3>Chatbots & Automation</h3>
+            <p>Conversational agents, RPA and automation to reduce manual work and improve response times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2>What Clients Say</h2>
+
+        <div class="reviews-header">
+          <div class="avg-rating">
+            <span class="big">{{ avg_rating }}</span>
+            <span class="stars">★★★★★</span>
+            <span class="count">({{ reviews_count }} reviews)</span>
+          </div>
+        </div>
+
+        <div class="test-list collapsed" id="testList">
+          <!-- render all reviews but keep collapsed by default; JS will hide/show beyond the first 4 -->
+          {% for r in dummy_reviews %}
+          <div class="test">
+            <div class="avatar">{{ r.initials }}</div>
+            <div class="comment-body">
+              <div class="meta">
+                <span class="client-name">{{ r.name }}</span>
+                <span class="time">{{ r.time }}</span>
+                <span class="rating">{{ r.stars }}</span>
+              </div>
+              <div class="comment-text">{{ r.review }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- toggle to show all reviews -->
+        <div class="reviews-toggle-wrap">
+          <button id="toggleReviews" class="toggle-reviews" aria-expanded="false">See all reviews</button>
+        </div>
+
+        <!-- Review submission form (client-side) -->
+        <form id="reviewForm" class="review-form" aria-label="Submit a review">
+          <h3>Leave a review</h3>
+          <div class="form-row">
+            <label for="reviewerName">Name</label>
+            <input id="reviewerName" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-row">
+            <label>Rating</label>
+            <div class="star-rating" role="radiogroup" aria-label="Rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">★</label>
+              <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">★</label>
+              <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">★</label>
+              <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">★</label>
+              <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="reviewText">Review</label>
+            <textarea id="reviewText" name="review" rows="4" placeholder="Share your experience" required></textarea>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn">Submit Review</button>
+          </div>
+          
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+
+        <!-- Show Django messages for success/error -->
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li class="message {{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="contact-grid">
+          <form method="post" class="contact-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+
+          <div class="contact-info">
+            <h3>Get in touch</h3>
+            <p>Email: <a href="mailto:botsolution@botsolutions.site">botsolution@botsolutions.site</a></p>
+            <p>Phone: +92 3368741603</p>
+            <p>Islamabad, Pakistan</p>
+            <div class="social-links" aria-label="Bot Solutions social links">
+              <a class="social facebook" href="https://www.facebook.com/profile.php?id=61583943695468" target="_blank" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.07C22 6.52 17.52 2 12 2S2 6.52 2 12.07C2 17.09 5.66 21.13 10.44 21.95v-6.99H7.9v-2.86h2.54V9.66c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.86h-2.34V22C18.34 21.13 22 17.09 22 12.07z"/></svg>
+              </a>
+              <a class="social linkedin" href="https://www.linkedin.com/company/bots-solutions/about/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.34 17.5H6.14V10.5h2.2v7zM7.24 9.45a1.28 1.28 0 110-2.56 1.28 1.28 0 010 2.56zM18 17.5h-2.2v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9v3.67H10V10.5h2.1v.96h.03c.29-.54 1.01-1.1 2.08-1.1 2.22 0 2.63 1.46 2.63 3.36v4.78z"/></svg>
+              </a>
+              <a class="social instagram" href="https://instagram.com/botsolutions" target="_blank" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.4A4.6 4.6 0 1016.6 13 4.6 4.6 0 0012 8.4zm6.4-3.8a1.08 1.08 0 11-1.08 1.08A1.08 1.08 0 0118.4 4.6zM12 10.4A1.6 1.6 0 1110.4 12 1.6 1.6 0 0112 10.4z"/></svg>
+              </a>
+              <a class="social github" href="https://github.com/botuser444" target="_blank" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.97.1-.75.4-1.26.72-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.06 11.06 0 012.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.82 1.19 3.08 0 4.43-2.71 5.4-5.29 5.68.41.35.78 1.04.78 2.1 0 1.51-.01 2.73-.01 3.1 0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+              </a>
+              <!-- Twitter and YouTube links removed per request -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="footer-logo">
+            <img src="/static/images/logo.png" alt="Bot Solutions logo" class="site-logo footer-logo-img" />
+          </div>
+          <p class="footer-desc">We build modern web, mobile and AI-powered solutions — focused on reliability, performance and user experience.</p>
+          <small class="footer-note">Trusted by startups and enterprises worldwide.</small>
+        </div>
+
+        <div class="footer-col footer-nav" aria-label="Footer navigation">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Get in touch</h4>
+          <p>Email: <a href="mailto:botsolution@botsolutions.site">botsolution@botsolutions.site</a></p>
+          <p>Phone: +92 3368741603</p>
+          <p>Islamabad, Pakistan</p>
+          <div class="social-links footer-socials" aria-label="Bot Solutions social links">
+              <a class="social facebook" href="https://www.facebook.com/profile.php?id=61583943695468" target="_blank" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.07C22 6.52 17.52 2 12 2S2 6.52 2 12.07C2 17.09 5.66 21.13 10.44 21.95v-6.99H7.9v-2.86h2.54V9.66c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.86h-2.34V22C18.34 21.13 22 17.09 22 12.07z"/></svg>
+            </a>
+            <a class="social linkedin" href="https://www.linkedin.com/company/bots-solutions/about/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.34 17.5H6.14V10.5h2.2v7zM7.24 9.45a1.28 1.28 0 110-2.56 1.28 1.28 0 010 2.56zM18 17.5h-2.2v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9v3.67H10V10.5h2.1v.96h.03c.29-.54 1.01-1.1 2.08-1.1 2.22 0 2.63 1.46 2.63 3.36v4.78z"/></svg>
+            </a>
+            <a class="social instagram" href="https://instagram.com/botsolutions" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.4A4.6 4.6 0 1016.6 13 4.6 4.6 0 0012 8.4zm6.4-3.8a1.08 1.08 0 11-1.08 1.08A1.08 1.08 0 0118.4 4.6zM12 10.4A1.6 1.6 0 1110.4 12 1.6 1.6 0 0112 10.4z"/></svg>
+            </a>
+            <a class="social github" href="https://github.com/botuser444" target="_blank" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.97.1-.75.4-1.26.72-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.06 11.06 0 012.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.82 1.19 3.08 0 4.43-2.71 5.4-5.29 5.68.41.35.78 1.04.78 2.1 0 1.51-.01 2.73-.01 3.1 0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        
+        <a class="back-to-top" href="#home" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
