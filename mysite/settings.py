@@ -12,7 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'dev-secret-key-change-me'
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['botsolutions.site', 'www.botsolutions.site', '143.110.137.115']
+
 
 # Application definition
 INSTALLED_APPS = [
